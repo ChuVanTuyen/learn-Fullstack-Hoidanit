@@ -28,8 +28,9 @@ module.exports = {
       address: 'USA',
       gender: 1,
       image: 'https://menback.com/wp-content/uploads/2020/05/trai-tay-dep.jpg',
-      typeRole: 'ROLE',
-      keyRole: 'R1',
+      roleId: 'ROLE',
+      phoneNumber: 'R1',
+      positionId: 'R1',
       createdAt: new Date(),
       updatedAt: new Date(),
     }], {});

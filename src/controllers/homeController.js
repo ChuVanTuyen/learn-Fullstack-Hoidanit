@@ -1,5 +1,6 @@
 
 import db from "../models/index";
+import CRUDservice from "../services/CRUDservices";
 
 let getHomePage = async (req, res) => {
     //return res.send("hello world from controller");//bắn 1 dòng chữ
@@ -11,9 +12,21 @@ let getHomePage = async (req, res) => {
     } catch (e) {
         console.log(e);
     }
+}
 
+let getCRUD = (req, res) => {
+    return res.render("crud.ejs");
+}
+
+let postCRUD = async (req, res) => {
+    //console.log(req.body);// lấy dữ liệu từ người dùng gửi đến bằng form method="POST"
+    let message = await CRUDservice.createNewUser(req.body);
+    console.log(message);
+    return res.send("post crud server")
 }
 
 module.exports = {
     getHomePage: getHomePage,
+    getCRUD: getCRUD,
+    postCRUD: postCRUD,
 }
